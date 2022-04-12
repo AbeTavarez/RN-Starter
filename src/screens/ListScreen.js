@@ -14,13 +14,23 @@ const ListScreen = () => {
         {name: 'Friend #9'},
     ];
     return (
-       <FlatList data={friends}
+       <FlatList 
+       data={friends}
+       keyExtractor={friend => friend.name} // key needs to be unique and be a string
        renderItem={({item}) => {
            // element, is an object with item and index in it === { item: {name: 'Friend #1}, index: 0 }, so we will destructure item }
-           return <Text>{item.name}</Text>
+           return <Text style={styles.textStyle}>{item.name}</Text>
        }}
+       horizontal
+       showsHorizontalScrollIndicator={false}
        />
     )
 };
+
+const styles = StyleSheet.create({
+    textStyle: {
+        marginVertical: 50
+    }
+})
 
 export default ListScreen;
