@@ -22,9 +22,7 @@ const ImageScreen = () => {
 };
 
 const styles = StyleSheet.create({
-  container: {
-    backgroundColor: 'lightgrey'
-  }
+  container: {}
 });
 
 export default ImageScreen;
